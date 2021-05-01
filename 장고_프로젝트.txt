@@ -1,0 +1,53 @@
+# 가상환경 생성
+python -m venv myvenv
+(설치경로)
+
+# 가상환경 활성화
+myvenv\Scripts\activate
+
+# pip 최신 업데이트
+python -m pip install --upgrade pip
+
+# 장고 설치
+pip install django
+
+# 장고 프로젝트 생성
+django-admin.py startproject mysite .
+                                     (플젝명) .은 해당경로
+
+# 설정변경(settings.py)
+1. 언어
+   LANGUAGE_CODE = 'ko'
+2. 시간대
+   TIME_ZONE = 'Asia/Seoul'
+3. 정적파일 경로 추가
+   STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+4. pythonanywhere를 사용하기 위한 설정 추가
+   ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+
+# 데이터베이스 생성
+python manage.py migrate
+
+# 장고 서버 실행
+python manage.py runserver
+
+# 어플리케이션 만들기
+python manage.py startapp blog
+
+# 설정변경(settings.py)
+INSTALLED_APPS = ['blog'] 추가
+
+# db에 생성할 모델 생성
+python manage.py makemigrations blog
+
+# db에 모델 반영
+python manage.py migrate blog
+
+# 관리자 화면에 모델 추가(admin.py)
+from .models import Post
+
+admin.site.register(Post)
+
+# 관리자계정 생성
+python manage.py createsuperuser
+
