@@ -51,3 +51,14 @@ admin.site.register(Post)
 # 관리자계정 생성
 python manage.py createsuperuser
 
+# 깃 접속 및 설정
+git init
+
+git config --global user.name ""
+git config --global user.email ""
+
+# 변경사항 저장
+git add --all .
+
+# 변경사항 커밋
+git commit -m ""
