@@ -5,6 +5,9 @@ python -m venv myvenv
 # 가상환경 활성화
 myvenv\Scripts\activate
 
+# 가상환경 비활성화
+deactivate
+
 # pip 최신 업데이트
 python -m pip install --upgrade pip
 
@@ -60,5 +63,23 @@ git config --global user.email ""
 # 변경사항 저장
 git add --all .
 
-# 변경사항 커밋
 git commit -m ""
+
+# 변경사항 push
+git remote add origin https://github.com/<your-github-username>/my-first-blog.git(초기에 git 연결 시)
+
+git push -u origin master
+
+※ 여기서 깃허브 레지토리 생성할때 readme.md를 생성했을 시 오류가 발생한다고 한다.
+   => git pull origin master 
+   보통 위 명령어로 해결이 되나, 데이터 유실 등의 문제로 git에서 에러를 발생시키는 경우가 있음
+   => git push-u origin +master
+   강제로 push 진행
+   참고 url : https://velog.io/@tk_kim/TIL-DAY-11-Igonoring-Django-Secret-Key-with-.gitignore
+              https://doozi316.github.io/errorlog/2019/09/30/error1/
+
+# url
+  project urls.py -> app urls.py -> views.py
+
+# templates 경로
+  myapp/templates/myapp/*.html
